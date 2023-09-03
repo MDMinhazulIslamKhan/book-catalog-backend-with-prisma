@@ -36,17 +36,6 @@ const LoginUserZodSchema = z.object({
     }),
   }),
 });
-// const LoginUserZodSchema = z.object({
-//   body: z.object({
-//     name: z.string().optional(),
-//     role: z.enum(['admin', 'customer'] as [string, ...string[]]).optional(),
-//     email: z.string().optional(),
-//     password: z.string().optional(),
-//     contactNo: z.string().optional(),
-//     address: z.string().optional(),
-//     profileImg: z.string().optional(),
-//   }),
-// });
 export const AuthValidation = {
   CreateUserZodSchema,
   LoginUserZodSchema,
