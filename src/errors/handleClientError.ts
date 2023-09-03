@@ -24,6 +24,14 @@ const handleClientError = (error: PrismaClientKnownRequestError) => {
         },
       ];
     }
+  } else if (error.code === 'P2002') {
+    message = 'Unique constraint failed.';
+    errors = [
+      {
+        path: '',
+        message,
+      },
+    ];
   }
   return {
     statusCode,
