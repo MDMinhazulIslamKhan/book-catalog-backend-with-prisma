@@ -23,6 +23,14 @@ const handleClientError = (error: PrismaClientKnownRequestError) => {
           message,
         },
       ];
+    } else {
+      message = 'Foreign key constraint failed.';
+      errors = [
+        {
+          path: '',
+          message,
+        },
+      ];
     }
   } else if (error.code === 'P2002') {
     message = 'Unique constraint failed.';
