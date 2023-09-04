@@ -22,6 +22,9 @@ const GetSingleCategory = async (id: string): Promise<Category | null> => {
     where: {
       id,
     },
+    include: {
+      book: true,
+    },
   });
 
   if (!result) {

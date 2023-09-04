@@ -31,6 +31,9 @@ const GetSingleCategory = (id) => __awaiter(void 0, void 0, void 0, function* ()
         where: {
             id,
         },
+        include: {
+            book: true,
+        },
     });
     if (!result) {
         throw new ApiError_1.default(http_status_1.default.BAD_REQUEST, 'No Category is matching with this id.');
