@@ -10,10 +10,4 @@ exports.bookFilterableFields = [
     'author',
     'title',
 ];
-exports.bookSearchableFields = [
-    'title',
-    'author',
-    'genre',
-    'maxPrice',
-    'minPrice',
-];
+exports.bookSearchableFields = ['title', 'author', 'genre'];

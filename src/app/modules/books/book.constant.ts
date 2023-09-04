@@ -8,10 +8,4 @@ export const bookFilterableFields: string[] = [
   'title',
 ];
 
-export const bookSearchableFields: string[] = [
-  'title',
-  'author',
-  'genre',
-  'maxPrice',
-  'minPrice',
-];
+export const bookSearchableFields: string[] = ['title', 'author', 'genre'];
