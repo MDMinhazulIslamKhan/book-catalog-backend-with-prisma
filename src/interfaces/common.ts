@@ -15,3 +15,10 @@ export type IGenericErrorResponse = {
   message: string;
   errorMessages: IGenericErrorMessage[];
 };
+
+export type UserInfoFromToken = {
+  role: 'admin' | 'customer';
+  userId: string;
+  iat: number;
+  exp: number;
+};
