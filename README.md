@@ -114,7 +114,7 @@
 
 - api/v1/books?minPrice=400&maxPrice=500 **[Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books?minPrice=400&maxPrice=500)** => (filter by minPrice {default: 0} and maxPrice {default: 1000000})
 
-- api/v1/books?title=The Boy **[Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books?title=The Boy)** => (accurate search {**case sensitive**})
+- api/v1/books?title=The Boy **[Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books?title=The%20Boy)** => (accurate search {**case sensitive**})
 
 - api/v1/books?searchTerm=tion **[Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books?searchTerm=tion)** => (any matching search from title/ author/ genre {**case insensitive**})
 
