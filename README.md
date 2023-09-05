@@ -18,7 +18,7 @@
 
 - Need **name , role, email, contactNo, password, address, profileImg** from **req.body**
 
-### Login for user (post route)
+### Sign In or login for user (post route)
 
 - /api/v1/auth/signin (POST) [Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/auth/signin)
 
@@ -104,6 +104,22 @@
 
 - /api/v1/books (get) [Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books)
 
+### Searching, filtering and pagination routes for book listing
+
+- api/v1/books?page=1&size=10 **[Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books?page=1&size=10)** => (Page {default: 1} and size {default: 10})
+
+- api/v1/books?sortBy=price&sortOrder=asc **[Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books?sortBy=price&sortOrder=asc)** => (sortBy {default: title} and sortOrder {default: desc})
+
+- api/v1/books?sortBy=price&sortOrder=asc **[Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books?sortBy=price&sortOrder=asc)** => (sortBy and sortOrder)
+
+- api/v1/books?minPrice=400&maxPrice=500 **[Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books?minPrice=400&maxPrice=500)** => (filter by minPrice {default: 0} and maxPrice {default: 1000000})
+
+- api/v1/books?title=The Boy **[Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books?title=The Boy)** => (accurate search {**case sensitive**})
+
+- api/v1/books?searchTerm=tion **[Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books?searchTerm=tion)** => (any matching search from title/ author/ genre {**case insensitive**})
+
+---
+
 ### Get single book (get route)
 
 - /api/v1/books/:id (get) [Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/books/16200fdb-1922-4e04-af77-291d3d49dc7a)
@@ -166,7 +182,7 @@
 
 - **customer** can get only **his order that posted by himself**
 
-### Create book (post route)
+### Create order (post route)
 
 - /api/v1/orders/create-order (post) [Link](https://book-catalog-prisma-mdminhazulislamkhan.vercel.app/api/v1/orders/create-order)
 
