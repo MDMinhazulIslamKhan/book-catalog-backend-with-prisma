@@ -14,11 +14,4 @@ const router = express_1.default.Router();
 router.post('/create-order', (0, validateRequest_1.default)(orders_validation_1.OrderValidation.CreateOrdersZodSchema), (0, auth_1.default)(user_1.ENUM_USER_ROLE.CUSTOMER), orders_controller_1.OrderController.CreateOrder);
 router.get('/', (0, auth_1.default)(user_1.ENUM_USER_ROLE.ADMIN, user_1.ENUM_USER_ROLE.CUSTOMER), orders_controller_1.OrderController.GetAllOrders);
 router.get('/:id', (0, auth_1.default)(user_1.ENUM_USER_ROLE.ADMIN, user_1.ENUM_USER_ROLE.CUSTOMER), orders_controller_1.OrderController.GetSingleOrder);
-// router.patch(
-//   '/:id',
-//   validateRequest(OrderValidation.UpdateCategoryZodSchema),
-//   auth(ENUM_USER_ROLE.ADMIN),
-//   BookController.UpdateBook
-// );
-// router.delete('/:id', auth(ENUM_USER_ROLE.ADMIN), BookController.DeleteBook);
 exports.OrderRoutes = router;

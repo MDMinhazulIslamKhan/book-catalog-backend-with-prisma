@@ -25,13 +25,4 @@ router.get(
   OrderController.GetSingleOrder
 );
 
-// router.patch(
-//   '/:id',
-//   validateRequest(OrderValidation.UpdateCategoryZodSchema),
-//   auth(ENUM_USER_ROLE.ADMIN),
-//   BookController.UpdateBook
-// );
-
-// router.delete('/:id', auth(ENUM_USER_ROLE.ADMIN), BookController.DeleteBook);
-
 export const OrderRoutes = router;

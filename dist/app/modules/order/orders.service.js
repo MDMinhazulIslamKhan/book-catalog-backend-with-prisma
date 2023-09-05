@@ -20,6 +20,16 @@ const CreateOrder = (user, bookData) => __awaiter(void 0, void 0, void 0, functi
     if (!bookData.length) {
         throw new ApiError_1.default(http_status_1.default.BAD_REQUEST, 'You must send bookId!');
     }
+    yield Promise.all(bookData.map((book) => __awaiter(void 0, void 0, void 0, function* () {
+        const findBook = yield prisma_1.default.book.findUnique({
+            where: {
+                id: book.bookId,
+            },
+        });
+        if (!findBook) {
+            throw new ApiError_1.default(http_status_1.default.BAD_REQUEST, `There is no book with this bookId (${book.bookId})!`);
+        }
+    })));
     const result = yield prisma_1.default.order.create({
         data: {
             userId: user.userId,

@@ -12,6 +12,21 @@ const CreateOrder = async (
   if (!bookData.length) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'You must send bookId!');
   }
+  await Promise.all(
+    bookData.map(async book => {
+      const findBook = await prisma.book.findUnique({
+        where: {
+          id: book.bookId,
+        },
+      });
+      if (!findBook) {
+        throw new ApiError(
+          httpStatus.BAD_REQUEST,
+          `There is no book with this bookId (${book.bookId})!`
+        );
+      }
+    })
+  );
 
   const result = await prisma.order.create({
     data: {
